@@ -522,6 +522,9 @@ MspHelper.prototype.process_data = function(dataHandler) {
                     FC.GPS_RESCUE.minRescueDth = data.readU16();
                 }
                 break;
+            case MSPCodes.MSP_COMPASS_CONFIG:
+                FC.COMPASS_RESCUE.angle = data.readU16();
+                break;
             case MSPCodes.MSP_RSSI_CONFIG:
                 FC.RSSI_CONFIG.channel = data.readU8();
                 break;
@@ -630,6 +633,9 @@ MspHelper.prototype.process_data = function(dataHandler) {
                 break;
             case MSPCodes.MSP_SET_GPS_RESCUE:
                 console.log('GPS Rescue Configuration saved');
+                break;
+            case MSPCodes.MSP_SET_COMPASS_CONFIG:
+                console.log('Compass Rescue Configuration saved');
                 break;
             case MSPCodes.MSP_SET_RSSI_CONFIG:
                 console.log('RSSI Configuration saved');
@@ -1765,6 +1771,9 @@ MspHelper.prototype.crunch = function(code, modifierCode = undefined) {
             if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_44)) {
                 buffer.push16(FC.GPS_RESCUE.minRescueDth);
             }
+            break;
+        case MSPCodes.MSP_SET_COMPASS_CONFIG:
+            buffer.push16(FC.COMPASS_RESCUE.angle);
             break;
         case MSPCodes.MSP_SET_RSSI_CONFIG:
             buffer.push8(FC.RSSI_CONFIG.channel);

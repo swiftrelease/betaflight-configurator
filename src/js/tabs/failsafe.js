@@ -256,6 +256,11 @@ failsafe.initialize = function (callback) {
                 element.prop('checked', true);
                 element.change();
                 break;
+            case 3:
+                element = $('input[id="compass_rescue"]');
+                element.prop('checked', true);
+                element.change();
+                break;
         }
 
         // Sort the element, if need to group, do it by lexical sort, ie. by naming of (the translated) selection text
@@ -306,6 +311,9 @@ failsafe.initialize = function (callback) {
             $('input[name="gps_rescue_min_dth"]').attr("min", 20);
         }
 
+        // Load compass rescue params
+        $('input[name="compass_rescue_angle"]').val(FC.COMPASS_RESCUE.angle);
+
         $('a.save').click(function () {
             // gather data that doesn't have automatic change event bound
 
@@ -325,6 +333,8 @@ failsafe.initialize = function (callback) {
                 FC.FAILSAFE_CONFIG.failsafe_procedure = 1;
             } else if( $('input[id="gps_rescue"]').is(':checked')) {
                 FC.FAILSAFE_CONFIG.failsafe_procedure = 2;
+            } else if ( $('input[id="compass_rescue"]').is(':checked')) {
+                FC.FAILSAFE_CONFIG.failsafe_procedure = 3;
             }
 
             FC.FAILSAFE_CONFIG.failsafe_switch_mode = $('select[name="failsafe_switch_mode"]').val();
@@ -350,6 +360,8 @@ failsafe.initialize = function (callback) {
             if (semver.gte(FC.CONFIG.apiVersion, API_VERSION_1_44)) {
                 FC.GPS_RESCUE.minRescueDth = $('input[name="gps_rescue_min_dth"]').val();
             }
+
+            FC.COMPASS_RESCUE.angle = $('input[name="compass_rescue_angle"]').val();
 
             function save_failssafe_config() {
                 MSP.send_message(MSPCodes.MSP_SET_FAILSAFE_CONFIG, mspHelper.crunch(MSPCodes.MSP_SET_FAILSAFE_CONFIG), false, save_rxfail_config);

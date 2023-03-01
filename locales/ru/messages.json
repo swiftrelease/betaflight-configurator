@@ -3500,6 +3500,9 @@
     "failsafeOffDelayHelp": {
         "message": "Время, отведённое на режим приземления, после чего моторы отключатся и аппарат будет задизармен"
     },
+    "failsafeCompassRescueAngle": {
+        "message": "Угол компаса"
+    },
     "failsafeSubTitle1": {
         "message": "Этап 2 - Процедура Failsafe"
     },
@@ -3511,6 +3514,9 @@
     },
     "failsafeProcedureItemSelect4": {
         "message": "GPS спасение"
+    },
+    "failsafeProcedureItemSelect5": {
+        "message": "Полёт по компасу"
     },
     "failsafeGpsRescueItemAngle": {
         "message": "Угол"

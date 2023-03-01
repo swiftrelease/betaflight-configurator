@@ -588,6 +588,10 @@ const FC = {
             minRescueDth:                   0,
         };
 
+        this.COMPASS_RESCUE = {
+            angle:                          0,
+        };
+
         this.RXFAIL_CONFIG = [];
 
         this.VTX_CONFIG = {

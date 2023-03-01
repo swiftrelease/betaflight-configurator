@@ -4276,6 +4276,9 @@
     "failsafeOffDelayHelp": {
         "message": "Time to stay in landing mode until the motors are turned off and the craft is disarmed"
     },
+    "failsafeCompassRescueAngle": {
+        "message": "Compass angle"
+    },
     "failsafeSubTitle1": {
         "message": "Stage 2 - Failsafe Procedure"
     },
@@ -4287,6 +4290,9 @@
     },
     "failsafeProcedureItemSelect4": {
         "message": "GPS Rescue"
+    },
+    "failsafeProcedureItemSelect5": {
+        "message": "Compass Rescue"
     },
 
     "failsafeGpsRescueItemAngle": {
@@ -4878,7 +4884,7 @@
     },
     "osdTextElementVTXchannelVariantPower": {
         "message": "VTX power",
-        "description": "One of the variants of the VTX channel element of the OSD"        
+        "description": "One of the variants of the VTX channel element of the OSD"
     },
     "osdTextElementVTXchannelVariantFull": {
         "message": "Band:Channel:Pwr:Pit",
