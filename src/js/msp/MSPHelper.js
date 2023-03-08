@@ -523,7 +523,15 @@ MspHelper.prototype.process_data = function(dataHandler) {
                 }
                 break;
             case MSPCodes.MSP_COMPASS_CONFIG:
-                FC.COMPASS_RESCUE.angle = data.readU16();
+                FC.COMPASS_RESCUE.ascendRate            = data.readU16();
+                FC.COMPASS_RESCUE.rescueAltitudeBufferM = data.readU16();
+                FC.COMPASS_RESCUE.minReturnAltitudeM    = data.readU16();
+                FC.COMPASS_RESCUE.altitudeMode          = data.readU8();
+                FC.COMPASS_RESCUE.direction             = data.readU16();
+                FC.COMPASS_RESCUE.angle                 = data.readU16();
+                FC.COMPASS_RESCUE.throttleMin           = data.readU16();
+                FC.COMPASS_RESCUE.throttleMax           = data.readU16();
+                FC.COMPASS_RESCUE.throttleHover         = data.readU16();
                 break;
             case MSPCodes.MSP_RSSI_CONFIG:
                 FC.RSSI_CONFIG.channel = data.readU8();
@@ -1773,7 +1781,15 @@ MspHelper.prototype.crunch = function(code, modifierCode = undefined) {
             }
             break;
         case MSPCodes.MSP_SET_COMPASS_CONFIG:
-            buffer.push16(FC.COMPASS_RESCUE.angle);
+            buffer.push16(FC.COMPASS_RESCUE.ascendRate)
+                  .push16(FC.COMPASS_RESCUE.rescueAltitudeBufferM)
+                  .push16(FC.COMPASS_RESCUE.minReturnAltitudeM)
+                  .push8(FC.COMPASS_RESCUE.altitudeMode)
+                  .push16(FC.COMPASS_RESCUE.direction)
+                  .push16(FC.COMPASS_RESCUE.angle)
+                  .push16(FC.COMPASS_RESCUE.throttleMin)
+                  .push16(FC.COMPASS_RESCUE.throttleMax)
+                  .push16(FC.COMPASS_RESCUE.throttleHover);
             break;
         case MSPCodes.MSP_SET_RSSI_CONFIG:
             buffer.push8(FC.RSSI_CONFIG.channel);

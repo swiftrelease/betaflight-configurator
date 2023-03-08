@@ -208,8 +208,61 @@
                             <div class="proceduresettings">
                                 <div class="number">
                                     <label>
-                                        <input type="number" name="compass_rescue_angle" min="0" max="359" />
+                                        <input type="number" name="compass_rescue_direction" min="0" max="360" />
+                                        <span i18n="failsafeCompassRescueDirection"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_angle" min="0" max="60" />
                                         <span i18n="failsafeCompassRescueAngle"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_ascend_rate" min="50" max="250" />
+                                        <span i18n="failsafeCompassRescueAscendRate"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_initial_altitude" min="0" max="100" />
+                                        <span i18n="failsafeCompassRescueInitialAltitude"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_min_return_altitude" min="0" max="1000" />
+                                        <span i18n="failsafeCompassRescueMinReturnAltitude"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_throttle_min" min="1000" max="2000" />
+                                        <span i18n="failsafeCompassRescueThrottleMin"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_throttle_max" min="1000" max="2000" />
+                                        <span i18n="failsafeCompassRescueThrottleMax"></span>
+                                    </label>
+                                </div>
+                                <div class="number">
+                                    <label>
+                                        <input type="number" name="compass_rescue_throttle_hover" min="1000" max="2000" />
+                                        <span i18n="failsafeCompassRescueThrottleHover"></span>
+                                    </label>
+                                </div>
+
+                                <div class="number">
+                                    <label>
+                                        <select id="failsafeCompassRescueAltitudeSelect" class="switchMode" name="compass_rescue_altitude_mode">
+                                            <option value="0" i18n="failsafeCompassRescueAltitudeModeMaxAlt"></option>
+                                            <option value="1" i18n="failsafeCompassRescueAltitudeModeMinAlt"></option>
+                                            <option value="2" i18n="failsafeCompassRescueAltitudeModeCurrentAlt"></option>
+                                        </select>
+                                        <span i18n="failsafeCompassRescueAltitudeMode"></span>
                                     </label>
                                 </div>
                             </div>

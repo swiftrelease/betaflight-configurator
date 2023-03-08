@@ -312,7 +312,15 @@ failsafe.initialize = function (callback) {
         }
 
         // Load compass rescue params
+        $('input[name="compass_rescue_direction"]').val(FC.COMPASS_RESCUE.direction);
         $('input[name="compass_rescue_angle"]').val(FC.COMPASS_RESCUE.angle);
+        $('input[name="compass_rescue_ascend_rate"]').val(FC.COMPASS_RESCUE.ascendRate);
+        $('input[name="compass_rescue_initial_altitude"]').val(FC.COMPASS_RESCUE.rescueAltitudeBufferM);
+        $('input[name="compass_rescue_min_return_altitude"]').val(FC.COMPASS_RESCUE.minReturnAltitudeM);
+        $('input[name="compass_rescue_throttle_min"]').val(FC.COMPASS_RESCUE.throttleMin);
+        $('input[name="compass_rescue_throttle_max"]').val(FC.COMPASS_RESCUE.throttleMax);
+        $('input[name="compass_rescue_throttle_hover"]').val(FC.COMPASS_RESCUE.throttleHover);
+        $('select[name="compass_rescue_altitude_mode"]').val(FC.COMPASS_RESCUE.altitudeMode);
 
         $('a.save').click(function () {
             // gather data that doesn't have automatic change event bound
@@ -361,7 +369,15 @@ failsafe.initialize = function (callback) {
                 FC.GPS_RESCUE.minRescueDth = $('input[name="gps_rescue_min_dth"]').val();
             }
 
+            FC.COMPASS_RESCUE.direction = $('input[name="compass_rescue_direction"]').val();
             FC.COMPASS_RESCUE.angle = $('input[name="compass_rescue_angle"]').val();
+            FC.COMPASS_RESCUE.ascendRate = $('input[name="compass_rescue_ascend_rate"]').val();
+            FC.COMPASS_RESCUE.rescueAltitudeBufferM = $('input[name="compass_rescue_initial_altitude"]').val();
+            FC.COMPASS_RESCUE.minReturnAltitudeM = $('input[name="compass_rescue_min_return_altitude"]').val();
+            FC.COMPASS_RESCUE.throttleMin = $('input[name="compass_rescue_throttle_min"]').val();
+            FC.COMPASS_RESCUE.throttleMax = $('input[name="compass_rescue_throttle_max"]').val();
+            FC.COMPASS_RESCUE.throttleHover = $('input[name="compass_rescue_throttle_hover"]').val();
+            FC.COMPASS_RESCUE.altitudeMode = parseInt($('select[name="compass_rescue_altitude_mode"]').val());
 
             function save_failssafe_config() {
                 MSP.send_message(MSPCodes.MSP_SET_FAILSAFE_CONFIG, mspHelper.crunch(MSPCodes.MSP_SET_FAILSAFE_CONFIG), false, save_rxfail_config);

@@ -4276,8 +4276,41 @@
     "failsafeOffDelayHelp": {
         "message": "Time to stay in landing mode until the motors are turned off and the craft is disarmed"
     },
+    "failsafeCompassRescueDirection": {
+        "message": "Compass direction"
+    },
     "failsafeCompassRescueAngle": {
-        "message": "Compass angle"
+        "message": "Angle"
+    },
+    "failsafeCompassRescueAscendRate": {
+        "message": "Ascend rate (centimeters/second)"
+    },
+    "failsafeCompassRescueInitialAltitude": {
+        "message": "Initial climb/altitude (meters)"
+    },
+    "failsafeCompassRescueMinReturnAltitude": {
+        "message": "Minimum return altitude (meters)"
+    },
+    "failsafeCompassRescueThrottleMin": {
+        "message": "Throttle minimum"
+    },
+    "failsafeCompassRescueThrottleMax": {
+        "message": "Throttle maximum"
+    },
+    "failsafeCompassRescueThrottleHover": {
+        "message": "Throttle hover"
+    },
+    "failsafeCompassRescueAltitudeMode": {
+        "message": "Altitude mode"
+    },
+    "failsafeCompassRescueAltitudeModeMaxAlt": {
+        "message": "Maximum altitude (Use max recorded altitude)"
+    },
+    "failsafeCompassRescueAltitudeModeMinAlt": {
+        "message": "Minimum altitude (Fly no lower than min alt, if current is higher use it)"
+    },
+    "failsafeCompassRescueAltitudeModeCurrentAlt": {
+        "message": "Current altitude (Just use this alt, no ascend)"
     },
     "failsafeSubTitle1": {
         "message": "Stage 2 - Failsafe Procedure"

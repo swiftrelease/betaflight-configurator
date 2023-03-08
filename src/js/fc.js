@@ -589,7 +589,15 @@ const FC = {
         };
 
         this.COMPASS_RESCUE = {
-            angle:                          0,
+            ascendRate:                     50,   // 50 - 2500
+            rescueAltitudeBufferM:          0,    // 0 - 100
+            minReturnAltitudeM:             0,    // 0 - 1000
+            altitudeMode:                   0,    // 0 - 2
+            direction:                      0,    // 0 - 360
+            angle:                          0,    // 0 - 60
+            throttleMin:                    1000, // 1000 - 2000
+            throttleMax:                    1000, // 1000 - 2000
+            throttleHover:                  1000, // 1000 - 2000
         };
 
         this.RXFAIL_CONFIG = [];
