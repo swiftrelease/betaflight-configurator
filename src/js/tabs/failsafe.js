@@ -31,7 +31,11 @@ failsafe.initialize = function (callback) {
     }
 
     function load_gps_rescue() {
-        MSP.send_message(MSPCodes.MSP_GPS_RESCUE, false, false, get_box_names);
+        MSP.send_message(MSPCodes.MSP_GPS_RESCUE, false, false, load_compass_rescue);
+    }
+
+    function load_compass_rescue() {
+        MSP.send_message(MSPCodes.MSP_COMPASS_CONFIG, false, false, get_box_names);
     }
 
     function get_box_names() {
@@ -392,7 +396,11 @@ failsafe.initialize = function (callback) {
             }
 
             function save_gps_rescue() {
-                MSP.send_message(MSPCodes.MSP_SET_GPS_RESCUE, mspHelper.crunch(MSPCodes.MSP_SET_GPS_RESCUE), false, save_to_eeprom);
+                MSP.send_message(MSPCodes.MSP_SET_GPS_RESCUE, mspHelper.crunch(MSPCodes.MSP_SET_GPS_RESCUE), false, save_compass_rescue);
+            }
+
+            function save_compass_rescue() {
+                MSP.send_message(MSPCodes.MSP_SET_COMPASS_CONFIG, mspHelper.crunch(MSPCodes.MSP_SET_COMPASS_CONFIG), false, save_to_eeprom);
             }
 
             function save_to_eeprom() {
